@@ -6,7 +6,7 @@ option go_package = "github.com/fbriansyah/my-grpc-proto/protogen/go/hello";
 
 message HelloRequest {
   string name = 1;
-  string age = 2;
+  string age = 2 [json_name="age"];
 }
 
 message HelloResponse {
