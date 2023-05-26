@@ -92,7 +92,7 @@ func (c *helloServiceClient) SayHelloToEveryone(ctx context.Context, opts ...grp
 }
 
 type HelloService_SayHelloToEveryoneClient interface {
-	Send(*HelloResponse) error
+	Send(*HelloRequest) error
 	CloseAndRecv() (*HelloResponse, error)
 	grpc.ClientStream
 }
@@ -101,7 +101,7 @@ type helloServiceSayHelloToEveryoneClient struct {
 	grpc.ClientStream
 }
 
-func (x *helloServiceSayHelloToEveryoneClient) Send(m *HelloResponse) error {
+func (x *helloServiceSayHelloToEveryoneClient) Send(m *HelloRequest) error {
 	return x.ClientStream.SendMsg(m)
 }
 
@@ -197,7 +197,7 @@ func _HelloService_SayHelloToEveryone_Handler(srv interface{}, stream grpc.Serve
 
 type HelloService_SayHelloToEveryoneServer interface {
 	SendAndClose(*HelloResponse) error
-	Recv() (*HelloResponse, error)
+	Recv() (*HelloRequest, error)
 	grpc.ServerStream
 }
 
@@ -209,8 +209,8 @@ func (x *helloServiceSayHelloToEveryoneServer) SendAndClose(m *HelloResponse) er
 	return x.ServerStream.SendMsg(m)
 }
 
-func (x *helloServiceSayHelloToEveryoneServer) Recv() (*HelloResponse, error) {
-	m := new(HelloResponse)
+func (x *helloServiceSayHelloToEveryoneServer) Recv() (*HelloRequest, error) {
+	m := new(HelloRequest)
 	if err := x.ServerStream.RecvMsg(m); err != nil {
 		return nil, err
 	}
