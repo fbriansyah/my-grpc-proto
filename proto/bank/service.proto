@@ -16,5 +16,5 @@ service BankService {
     returns (stream ExchangeRateResponse) {}
 
   rpc SummarizeTransactions(stream Transaction)
-    returns (TransactionSummary)
+    returns (TransactionSummary) {}
 }
