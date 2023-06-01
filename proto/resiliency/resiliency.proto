@@ -11,7 +11,7 @@ message ResiliencyRequest {
   repeated uint32 status_codes = 3 [json_name="status_codes"];
 }
 
-message ResiliencyService {
+message ResiliencyResponse {
   string dummy_string = 1 [json_name = "dummy_string"];
 }
 
