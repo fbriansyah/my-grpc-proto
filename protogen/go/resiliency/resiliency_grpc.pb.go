@@ -19,10 +19,10 @@ import (
 const _ = grpc.SupportPackageIsVersion7
 
 const (
-	ResiliencyService_UnaryResiliency_FullMethodName           = "/bank.ResiliencyService/UnaryResiliency"
-	ResiliencyService_ServerStreamingResiliency_FullMethodName = "/bank.ResiliencyService/ServerStreamingResiliency"
-	ResiliencyService_ClientStreamingResiliency_FullMethodName = "/bank.ResiliencyService/ClientStreamingResiliency"
-	ResiliencyService_BiDirectionalResiliency_FullMethodName   = "/bank.ResiliencyService/BiDirectionalResiliency"
+	ResiliencyService_UnaryResiliency_FullMethodName           = "/resiliency.ResiliencyService/UnaryResiliency"
+	ResiliencyService_ServerStreamingResiliency_FullMethodName = "/resiliency.ResiliencyService/ServerStreamingResiliency"
+	ResiliencyService_ClientStreamingResiliency_FullMethodName = "/resiliency.ResiliencyService/ClientStreamingResiliency"
+	ResiliencyService_BiDirectionalResiliency_FullMethodName   = "/resiliency.ResiliencyService/BiDirectionalResiliency"
 )
 
 // ResiliencyServiceClient is the client API for ResiliencyService service.
@@ -284,7 +284,7 @@ func (x *resiliencyServiceBiDirectionalResiliencyServer) Recv() (*ResiliencyRequ
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
 var ResiliencyService_ServiceDesc = grpc.ServiceDesc{
-	ServiceName: "bank.ResiliencyService",
+	ServiceName: "resiliency.ResiliencyService",
 	HandlerType: (*ResiliencyServiceServer)(nil),
 	Methods: []grpc.MethodDesc{
 		{
