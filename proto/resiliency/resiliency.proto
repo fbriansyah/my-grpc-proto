@@ -1,6 +1,6 @@
 syntax = "proto3";
 
-package bank;
+package resiliency;
 
 option go_package = 
   "github.com/fbriansyah/my-grpc-proto/protogen/go/resiliency";
